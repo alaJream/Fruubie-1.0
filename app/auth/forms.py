@@ -7,8 +7,6 @@ from app.models import Post, User
 from app import bcrypt
 
 
-# forms.py
-
 class SignUpForm(FlaskForm):
     username = StringField('User Name',
         validators=[DataRequired(), Length(min=3, max=50)])

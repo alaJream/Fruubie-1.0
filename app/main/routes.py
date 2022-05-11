@@ -7,7 +7,6 @@ from flask_login import login_user, logout_user, login_required, current_user
 
 main = Blueprint('main', __name__)
 
-# Create your routes here.
 @main.route('/')
 def index():
   posts = Post.query.all()

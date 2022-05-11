@@ -1,4 +1,3 @@
-"""Utility classes & functions."""
 import enum
 
 class FormEnum(enum.Enum):

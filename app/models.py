@@ -1,11 +1,8 @@
-# Create your models here.
 from sqlalchemy_utils import URLType
 
 from app.extensions import db
 from app.utils import FormEnum
 from flask_login import UserMixin
-
-
 
 class Post(db.Model):
     """Grocery Store model."""
