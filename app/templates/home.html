@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Have Excess Produce? Welcome to Fruubie!</h1>
+
+<p>Share with the community!</p>
+
+<h2>All Posts</h2>
+
+{% for post in posts %}
+<div class="post">
+  <div class="post-header">
+    <a href="/post/{{post.id}}">{{ post.name }}</a>
+  </div>
+  <p>City/Address: {{ post.address }} </p>
+</div>
+{% endfor %}
+
+{% endblock %}

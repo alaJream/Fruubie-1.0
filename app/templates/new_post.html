@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>New Post</h1>
+
+<form method="POST">
+    <fieldset>
+        <legend>Enter the excess produce you'd like to share</legend>
+
+        {{ form.csrf_token }}
+        {{ form.name.label }} {{ form.name(size=20) }}
+        {{ form.address.label }} {{ form.address(size=20) }}
+        <input type="submit" value="Submit">
+    </fieldset>
+</form>
+
+
+{% endblock %}

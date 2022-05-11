@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{ post.name }}</h1>
+
+<strong>Address:</strong> {{ post.address }}
+
+
+<div> 
+  <h2>Reviews</h2>
+  {% for review in post.reviews %}
+   <div class="post">
+     <a href="/user/{{review.reviewer.id}}">{{ review.reviewer.username }}</a>
+     <p> {{ review.comment }}</p>
+   </div>
+  {% endfor %}
+</div>
+
+<form method="POST">
+  <fieldset>
+    <legend>Leave a review</legend>
+    {{ comment_form.csrf_token }}
+    {{ comment_form.comment.label }} {{ comment_form.comment }}
+    <input class='btn' type="submit" value="Submit">
+  </fieldset>
+</form>
+
+
+<h2>Edit Post</h2>
+
+<form method="POST">
+    <fieldset>
+        <legend>Edit Post:</legend>
+
+        {{ form.csrf_token }}
+        {{ form.name.label }} {{ form.name(size=20) }}
+        {{ form.address.label }} {{ form.address(size=20) }}
+
+        <input class='btn' type="submit" value="Submit">
+    </fieldset>
+</form>
+
+{% endblock %}

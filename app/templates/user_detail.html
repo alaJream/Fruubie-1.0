@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>User Details</h1>
+
+<p>{{user.username}}'s Posts!</p>
+
+<div class="posts">
+  {% for post in user.favorites %}
+  <div class="post">
+      <a href="/post/{{ post.id }}">
+      <p><strong>{{ post.name }}</strong></p></a>
+      <p><strong>Address:</strong> {{ post.address }}</p>
+      <p>Created by: {{ post.created_by.username }}</p>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
